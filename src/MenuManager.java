@@ -5,10 +5,10 @@ public class MenuManager {
 
 
 		System.out.println("1. Add player");
-		System.out.println("1. Delete player");
-		System.out.println("1. Edit player");
-		System.out.println("1. View player");
-		System.out.println("1. Exit player");
+		System.out.println("2. Delete player");
+		System.out.println("3. Edit player");
+		System.out.println("4. View player");
+		System.out.println("5. Exit player");
 	}
 
 }
