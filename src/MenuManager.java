@@ -22,8 +22,7 @@ public class MenuManager {
 			String playerName = input.next();
 					}
 		else if (num==2) {
-			System.out.print("Player Number:");
-			int playerNumber = input.nextInt();
+			
 			System.out.print("Player Name:");
 			String playerName = input.next();
 					}
