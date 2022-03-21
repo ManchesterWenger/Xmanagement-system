@@ -45,7 +45,7 @@ public class MenuManager {
 			String playerName = input.next();
 					}
 		else if (num==6) {
-			System.out.print("프로그램 종료");
+			System.out.print("management System over");
 			
 					}
 		
