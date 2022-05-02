@@ -26,7 +26,7 @@ public class PlayerManger {
 		String playerName = input.next();
 		int index= -1;
 		for(int i=0; i<players.size(); i++) {
-			if(players.get(i).getName()== playerName) {
+			if(players.get(i).getName().equals(playerName)) {
 				index=i;
 				break;			
 			}
