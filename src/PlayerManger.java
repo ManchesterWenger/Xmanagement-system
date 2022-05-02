@@ -46,7 +46,7 @@ public class PlayerManger {
 	public  void Viewplayer() {	
 		System.out.print("Player Name:");
 		String playerName = input.next();
-		if(player.name== playerName) {			
+		if(player.name.equals(playerName)) {			
 			player.printInfo();
 		}
 	}

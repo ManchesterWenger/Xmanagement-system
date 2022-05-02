@@ -16,6 +16,6 @@ public class Player {
 		this.wage=wage;
 	}
 	public void printInfo() {
-		System.out.println("name:" + name + "number:" + number + "age:" + age + "wage:" + wage);
+		System.out.println("name:" + name +"\n"+"number:" + number+"번" + "\n"+"age:" + "만"+age+"세" + "\n"+"wage:" + wage+"만원");
  }
 }
