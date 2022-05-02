@@ -9,15 +9,15 @@ public class PlayerManger {
 		this.input=input;
 		}
 	public  void addPlayer() {
-		Player player = new Player();
 		System.out.print("Player Number:");
-		player.number = input.nextInt();
+		int number = input.nextInt();
 		System.out.print("Player Name:");
-		player.name = input.next();
+		String name = input.next();
 		System.out.print("Player age:");
-		player.age = input.nextInt();
+		int age = input.nextInt();
 		System.out.print("Player wage:");
-		player.wage = input.nextLong();
+		long wage = input.nextLong();
+		Player player = new Player(name,number,age,wage);
 		players.add(player);
 	}
 	
@@ -26,7 +26,7 @@ public class PlayerManger {
 		String playerName = input.next();
 		int index= -1;
 		for(int i=0; i<players.size(); i++) {
-			if(players.get(i).name== playerName) {
+			if(players.get(i).getName()== playerName) {
 				index=i;
 				break;			
 			}
@@ -47,7 +47,7 @@ public class PlayerManger {
 		String playerName = input.next();
 		for(int i=0; i<players.size(); i++) {
 		Player player = players.get(i);
-		if(player.name.equals(playerName)) {			
+		if(player.getName() .equals(playerName)) {			
 			int num = -1;
 			while (num!= 5) {
 				System.out.println("** Player Edit Menu");
@@ -61,19 +61,23 @@ public class PlayerManger {
 				num=input.nextInt();
 				if(num ==1) {
 					System.out.print("Player Name:");
-					player.name=input.next();
+					String name=input.next();
+					player.setName(name);
 				}
 				else if (num==2) {
 					System.out.print("Player Number:");
-					player.number=input.nextInt();
+					int number = input.nextInt();
+					player.setNumber(number);
 				}
 				else if (num==3) {
 					System.out.print("Player age:");
-					player.age=input.nextInt();
+					int age =input.nextInt();
+					player.setAge(age);
 				}
 				else if (num==4) {
 					System.out.print("Player wage:");
-					player.wage=input.nextLong();
+					long wage =input.nextLong();
+					player.setWage(wage);
 				}
 				else {
 					continue;
