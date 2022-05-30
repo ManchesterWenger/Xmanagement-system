@@ -1,5 +1,7 @@
 package guI;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +14,9 @@ public class MenuSelection extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		
-		JPanel panel = new JPanel();
+		
+		JPanel panel1 = new JPanel();
+		JPanel panel2 = new JPanel();
 		JLabel label = new JLabel("Menu Selection");
 		
 		JButton button1 = new JButton("Add Player");
@@ -21,13 +25,15 @@ public class MenuSelection extends JFrame {
 		JButton button4 = new JButton("Delete Player");
 		JButton button5 = new JButton("Exit Program");
 		
-		panel.add(label);
-		panel.add(button1);
-		panel.add(button2);
-		panel.add(button3);
-		panel.add(button4);
-		panel.add(button5);
-		this.setContentPane(panel);
+		panel1.add(label);
+		
+		panel2.add(button1);
+		panel2.add(button2);
+		panel2.add(button3);
+		panel2.add(button4);
+		panel2.add(button5);
+		this.add(panel1, BorderLayout.NORTH);
+		this.add(panel2, BorderLayout.CENTER);
 		this.setVisible(true);
 	}
 
