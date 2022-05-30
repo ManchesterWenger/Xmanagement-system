@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Player {
-	protected PlayerLeague League = PlayerLeague.PrimierLeague;
+	protected String League; 
 	protected String name;
 	protected int number;
 	protected int age;
@@ -9,7 +9,7 @@ public class Player {
 	
 	public Player() {}
 	
-	public Player(PlayerLeague League, String name,int number,int age, long wage){
+	public Player(String League,String name, int number,int age, long wage){
 		this.League=League;
 		this.name=name;
 		this.number=number;
@@ -33,6 +33,14 @@ public class Player {
 		this.number=number;
 		this.age=age;
 		
+	}
+	public String getleague() {
+		return  League;
+	}
+
+
+	public void setleague(String League) {
+		this. League =  League;
 	}
 	public String getName() {
 		return name;
@@ -72,16 +80,9 @@ public class Player {
 	public void setWage(long wage) {
 		this.wage = wage;
 	}
-	public PlayerLeague getLeague() {
-		return League;
-	}
-
-
-	public void setLeague(PlayerLeague league) {
-		League = league;
-	}
+	
 	public void printInfo() {
-		System.out.println("name:" + name +"\n"+"number:" + number+"번" + "\n"+"age:" + "만"+age+"세" + "\n"+"wage:" + wage+"만원");
+		System.out.println("League:"+ League+ "\n" + "name:" + name + "\n" +"number:" +  number + "번"  + "\n" +"age:" + age+ "\n"+"wage:" + wage);
  }
 	
 	public void getUserInput(Scanner input) {
@@ -91,6 +92,9 @@ public class Player {
 		System.out.print("Player Name:");
 		String name = input.next();
 		this.setName(name);
+		System.out.print("Player League:");
+		String League = input.next();
+		this.setleague(League);
 		System.out.print("Player age:");
 		int age = input.nextInt();
 		this.setAge(age);

@@ -17,7 +17,9 @@ public class PlayerManger {
 		int age = input.nextInt();
 		System.out.print("Player wage:");
 		long wage = input.nextLong();
-		Player player = new Player(name,number,age,wage);
+		System.out.print("Player League:");
+		String League = input.next();
+		Player player = new Player(League,name,number,age,wage);
 		players.add(player);
 	}
 	
