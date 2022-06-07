@@ -81,6 +81,11 @@ public class PlayerManger {
 					long wage =input.nextLong();
 					player.setWage(wage);
 				}
+				else if (num==5) {
+					System.out.print("Player League:");
+					String League =input.next();
+					player.setleague(League);
+				}
 				else {
 					continue;
 				}
