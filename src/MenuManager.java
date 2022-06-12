@@ -20,16 +20,20 @@ public class MenuManager {
 		num = input.nextInt();
 		if (num==1) {
 			playerManger.addPlayer();
+			
 					}
 		else if (num==2) {
 			
 			playerManger.Deleteplayer();
+			
 					}
 		else if (num==3) {
 			playerManger.Editplayer();
+			
 					}
 		else if (num==4) {
 			playerManger.Viewplayers();
+			
 					}
 		
 		else if (num==5) {

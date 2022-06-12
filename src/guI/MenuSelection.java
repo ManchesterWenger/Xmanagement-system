@@ -1,4 +1,4 @@
-package guI;
+ package guI;
 
 import java.awt.BorderLayout;
 
@@ -7,13 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MenuSelection extends JFrame {
+public class MenuSelection extends JPanel {
 	
 	public MenuSelection() {
-		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
-		
+		this.setLayout(new BorderLayout());
 		
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
@@ -34,7 +31,7 @@ public class MenuSelection extends JFrame {
 		panel2.add(button5);
 		this.add(panel1, BorderLayout.NORTH);
 		this.add(panel2, BorderLayout.CENTER);
-		this.setVisible(true);
+		
 	}
 
 }

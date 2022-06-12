@@ -9,18 +9,50 @@ public class PlayerManger {
 		this.input=input;
 		}
 	public  void addPlayer() {
-		System.out.print("Player Number:");
-		int number = input.nextInt();
-		System.out.print("Player Name:");
-		String name = input.next();
-		System.out.print("Player age:");
-		int age = input.nextInt();
-		System.out.print("Player wage:");
-		long wage = input.nextLong();
-		System.out.print("Player League:");
-		String League = input.next();
-		Player player = new Player(League,name,number,age,wage);
-		players.add(player);
+		int kind =0;
+		Player player;
+		while(kind!=1 && kind!=2 && kind!=3 && kind!=4) {
+		System.out.println("Select Player League");
+		System.out.println("1 for EPL");
+		System.out.println("2 for LaLiga");
+		System.out.println("3 for SERIE_A");
+		System.out.println("4 for BUDESLIGA");
+		System.out.print("Select num for Player League: ( 1~ 4 ):");
+		kind = input.nextInt();
+		
+		if (kind==1) {
+				 Player.League="EPL";
+				 player = new EPL();
+				 player.getUserInput(input);
+				 players.add(player);			
+				 break;
+			}
+			else if (kind==2) {
+				 Player.League="LaLiga";
+				 player = new LaLiga();
+				 player.getUserInput(input);
+				 players.add(player);
+				break;
+			}
+			else if (kind==3) {
+				 Player.League="SERIE_A";
+				 player = new SERIE_A();
+				 player.getUserInput(input);
+				 players.add(player);
+				break;
+			}
+			else if (kind==4) {
+				 Player.League="BUDESLIGA";
+				 player = new BUDESLIGA();
+				 player.getUserInput(input);
+				 players.add(player);
+				break;
+			}
+			else {
+				
+			}
+		}
+	  
 	}
 	
 	public  void Deleteplayer(){
@@ -81,11 +113,11 @@ public class PlayerManger {
 					long wage =input.nextLong();
 					player.setWage(wage);
 				}
-				else if (num==5) {
-					System.out.print("Player League:");
-					String League =input.next();
-					player.setleague(League);
-				}
+//				else if (num==5) {
+//					System.out.print("Player League:");
+//					String League =input.next();
+//					player.setleague(League);
+//				}
 				else {
 					continue;
 				}
