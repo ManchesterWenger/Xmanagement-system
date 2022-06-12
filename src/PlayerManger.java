@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PlayerManger {
-	ArrayList<Player> players= new ArrayList<Player>();
+	ArrayList<PlayerInput> players= new ArrayList<PlayerInput>();
 	Scanner input;
 	
 	PlayerManger(Scanner input){
@@ -10,7 +10,7 @@ public class PlayerManger {
 		}
 	public  void addPlayer() {
 		int kind =0;
-		Player player;
+		PlayerInput playerinput;
 		while(kind!=1 && kind!=2 && kind!=3 && kind!=4) {
 		System.out.println("Select Player League");
 		System.out.println("1 for EPL");
@@ -22,34 +22,34 @@ public class PlayerManger {
 		
 		if (kind==1) {
 				 Player.League="EPL";
-				 player = new EPL();
-				 player.getUserInput(input);
-				 players.add(player);			
+				 playerinput = new EPL();
+				 playerinput.getUserInput(input);
+				 players.add(playerinput);			
 				 break;
 			}
 			else if (kind==2) {
 				 Player.League="LaLiga";
-				 player = new LaLiga();
-				 player.getUserInput(input);
-				 players.add(player);
+				 playerinput = new LaLiga();
+				 playerinput.getUserInput(input);
+				 players.add(playerinput);
 				break;
 			}
 			else if (kind==3) {
 				 Player.League="SERIE_A";
-				 player = new SERIE_A();
-				 player.getUserInput(input);
-				 players.add(player);
+				 playerinput = new SERIE_A();
+				 playerinput.getUserInput(input);
+				 players.add(playerinput);
 				break;
 			}
 			else if (kind==4) {
 				 Player.League="BUDESLIGA";
-				 player = new BUDESLIGA();
-				 player.getUserInput(input);
-				 players.add(player);
+				 playerinput = new BUDESLIGA();
+				 playerinput.getUserInput(input);
+				 players.add(playerinput);
 				break;
 			}
 			else {
-				
+				System.out.println("Please put an integer between 1 and 5 !");
 			}
 		}
 	  
@@ -80,47 +80,33 @@ public class PlayerManger {
 		System.out.print("Player Name:");
 		String playerName = input.next();
 		for(int i=0; i<players.size(); i++) {
-		Player player = players.get(i);
-		if(player.getName() .equals(playerName)) {			
+		PlayerInput playerinput = players.get(i);
+		if(playerinput.getName() .equals(playerName)) {			
 			int num = -1;
 			while (num!= 5) {
-				System.out.println("** Player Edit Menu");
-				System.out.println("1. Edit Name");
-				System.out.println("2. Edit Number");
-				System.out.println("3. Edit age");
-				System.out.println("4. Edit wage");
-				System.out.println("5. Exit");
-				System.out.println("Select one number between 1 - 5");
+				 showeditMenu();
 				Scanner input = new Scanner(System.in);
 				num=input.nextInt();
-				if(num ==1) {
-					System.out.print("Player Name:");
-					String name=input.next();
-					player.setName(name);
-				}
-				else if (num==2) {
-					System.out.print("Player Number:");
-					int number = input.nextInt();
-					player.setNumber(number);
-				}
-				else if (num==3) {
-					System.out.print("Player age:");
-					int age =input.nextInt();
-					player.setAge(age);
-				}
-				else if (num==4) {
-					System.out.print("Player wage:");
-					long wage =input.nextLong();
-					player.setWage(wage);
-				}
-//				else if (num==5) {
-//					System.out.print("Player League:");
-//					String League =input.next();
-//					player.setleague(League);
-//				}
-				else {
-					continue;
-				}
+				switch(num) {
+				case 1:
+					setPlayerName(playerinput, input);
+					break;
+				
+				case 2:
+					setPlayerNumber(playerinput, input);
+					break;
+					
+				case 3:
+					setPlayeAge(playerinput, input);
+					break;
+					
+				case 4:
+					setPlayerWage(playerinput, input);
+					break;
+					
+				default:
+					continue;			
+				}			
 			}
 		break;	
 		  }		
@@ -128,13 +114,43 @@ public class PlayerManger {
 	}
 	
 	public  void Viewplayers() {	
-//		System.out.print("Player Name:");
-//		String playerName = input.next();
+
 		for(int i=0; i<players.size(); i++) {
 			players.get(i).printInfo();
 		}
-//		if(player.name.equals(playerName)) {			
-//			player.printInfo();
-//		}
+
+	}
+	public void setPlayerName(PlayerInput player, Scanner input) {	
+		System.out.print("Player Name:");
+		String name=input.next();
+		player.setName(name);
+	}
+	
+	public void setPlayerNumber(PlayerInput player, Scanner input) {	
+		System.out.print("Player Number:");
+		int number = input.nextInt();
+		player.setNumber(number);
+	}
+	
+	public void setPlayeAge(PlayerInput player, Scanner input) {	
+		System.out.print("Player age:");
+		int age =input.nextInt();
+		player.setAge(age);
+	}
+	
+	public void setPlayerWage(PlayerInput player, Scanner input) {	
+		System.out.print("Player wage:");
+		long wage =input.nextLong();
+		player.setWage(wage);
+	}
+	
+	public void showeditMenu() {
+		System.out.println("** Player Edit Menu");
+		System.out.println("1. Edit Name");
+		System.out.println("2. Edit Number");
+		System.out.println("3. Edit age");
+		System.out.println("4. Edit wage");
+		System.out.println("5. Exit");
+		System.out.println("Select one number between 1 - 5");
 	}
 }
