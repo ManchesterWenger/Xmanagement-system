@@ -40,28 +40,28 @@ public class PlayerManger implements Serializable {
 		kind = input.nextInt();
 		
 		if (kind==1) {
-				 Player.League="EPL";
+			
 				 playerinput = new EPL();
 				 playerinput.getUserInput(input);
 				 players.add(playerinput);			
 				 break;
 			}
 			else if (kind==2) {
-				 Player.League="LaLiga";
+	
 				 playerinput = new LaLiga();
 				 playerinput.getUserInput(input);
 				 players.add(playerinput);
 				break;
 			}
 			else if (kind==3) {
-				 Player.League="SERIE_A";
+				
 				 playerinput = new SERIE_A();
 				 playerinput.getUserInput(input);
 				 players.add(playerinput);
 				break;
 			}
 			else if (kind==4) {
-				 Player.League="BUDESLIGA";
+			
 				 playerinput = new BUDESLIGA();
 				 playerinput.getUserInput(input);
 				 players.add(playerinput);
@@ -180,5 +180,9 @@ public class PlayerManger implements Serializable {
 	
 	public int size() {
 		return players.size();
+	}
+	
+	public PlayerInput get (int index) {
+		return (PlayerInput) players.get(index);
 	}
 }

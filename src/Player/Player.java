@@ -9,7 +9,7 @@ public class Player implements Serializable{
 	 */
 	private static final long serialVersionUID = 949368191062847874L;
 	
-	static public String League;
+	protected String League;
 	protected String name;
 	protected int number;
 	protected int age;
@@ -91,27 +91,27 @@ public class Player implements Serializable{
 	String sLeague="none";
 	
 	public void printInfo() {
-		switch(this.League) {
-		case "EPL":
-			sLeague="Epl Player";
-			break;
-			
-		case "LaLiga":
-			sLeague="LaLiga Player";
-			break;
-			
-		case "SERIE_A":
-			sLeague="SERIE_A Player";
-			break;
-			
-		case  "BUDESLIGA" :
-			sLeague="BUDESLIGA Player";
-			break;
-			
-		default:
-			
-		}
-		System.out.println("League:" + sLeague + "\n" + "name:" + name + "\n" +"number:" +  number + "¹ø"  + "\n" +"age:" + age+ "\n"+"wage:" + wage);
+//		switch(this.League) {
+//		case "EPL":
+//			sLeague="Epl Player";
+//			break;
+//			
+//		case "LaLiga":
+//			sLeague="LaLiga Player";
+//			break;
+//			
+//		case "SERIE_A":
+//			sLeague="SERIE_A Player";
+//			break;
+//			
+//		case  "BUDESLIGA" :
+//			sLeague="BUDESLIGA Player";
+//			break;
+//			
+//		default:
+//			
+//		}
+		System.out.println("League:" + League + "\n" + "name:" + name + "\n" +"number:" +  number + "¹ø"  + "\n" +"age:" + age+ "\n"+"wage:" + wage);
  }
 	
 	

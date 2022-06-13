@@ -1,5 +1,7 @@
 package guI;
 
+import java.util.Vector;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -7,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
+import Player.PlayerInput;
 import manager.PlayerManger;
 public class PlayerViewer extends JPanel {
 	
@@ -20,13 +23,24 @@ public class PlayerViewer extends JPanel {
 		System.out.println("***"+playerManger.size()+"***");
 		
 		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("League");
 		model.addColumn("Name");
 		model.addColumn("Number");
 		model.addColumn("Age");
 		model.addColumn("Wage");
-		model.addColumn("League");
 		
-//		String column[] = {"Name","Number","Age","Wage","League"};
+	
+		
+		for(int i =0; i< playerManger.size(); i++) {
+			Vector row = new Vector();
+			PlayerInput pi = playerManger.get(i);
+			row.add(pi.getleague());
+			row.add(pi.getName());
+			row.add(pi.getNumber());
+			row.add(pi.getAge());
+			row.add(pi. getWage());
+			model.addRow(row);
+		}
 		
 		JTable table = new JTable(model);
 		JScrollPane sp = new JScrollPane(table); 

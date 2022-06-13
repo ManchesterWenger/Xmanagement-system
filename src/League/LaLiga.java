@@ -8,6 +8,13 @@ import Player.PlayerInput;
 public class LaLiga extends Player implements PlayerInput {
 
 	public void getUserInput(Scanner input) {
+		
+		System.out.print("Player League :LaLiga 입력하세요:");
+		String League = input.next();
+		this.setleague(League);
+		
+		
+		
 		System.out.print("Player Number:");
 		int number = input.nextInt();
 		this.setNumber(number);
