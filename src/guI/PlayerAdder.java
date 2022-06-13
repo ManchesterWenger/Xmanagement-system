@@ -9,7 +9,10 @@ import javax.swing.SpringLayout;
 
 public class PlayerAdder extends JPanel {
 	
-	public PlayerAdder() {
+	WindowFrame frame;
+	
+	public PlayerAdder(WindowFrame frame) {
+		this.frame= frame;
 		JPanel panel = new JPanel();
 		panel.setLayout (new SpringLayout());
 		

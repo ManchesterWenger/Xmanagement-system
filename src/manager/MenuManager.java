@@ -1,3 +1,5 @@
+package manager;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,24 +8,24 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import guI.WindowFrame;
 import log.EventLogger;
+
 public class MenuManager {
 	static EventLogger logger = new EventLogger("log.txt");
 	
 
 	public static void main(String[] args) {
 		
-		
-		
 		Scanner input = new Scanner(System.in);
 		PlayerManger playerManger = getObject("playerManager.ser");
 		if(playerManger==null) {
 			 playerManger = new PlayerManger(input);
+		}else {
+			 playerManger.setScanner(input);
 		}
-		else {
-			 playerManger.input=input;
-		}
-				
+		 WindowFrame frame = new WindowFrame(playerManger);
 		 selectMenu(playerManger,input );	
 		 putObject(playerManger,"playerManager.ser");
 	}

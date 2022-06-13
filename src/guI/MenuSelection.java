@@ -7,9 +7,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Listeners.ButtonView;
+
 public class MenuSelection extends JPanel {
 	
-	public MenuSelection() {
+	WindowFrame frame;
+	
+	public MenuSelection(WindowFrame frame) {
+		this.frame= frame;
+		
 		this.setLayout(new BorderLayout());
 		
 		JPanel panel1 = new JPanel();
@@ -21,6 +27,8 @@ public class MenuSelection extends JPanel {
 		JButton button3 = new JButton("Edit Player" );
 		JButton button4 = new JButton("Delete Player");
 		JButton button5 = new JButton("Exit Program");
+		
+		button2.addActionListener(new ButtonView(frame));
 		
 		panel1.add(label);
 		

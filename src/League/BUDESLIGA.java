@@ -1,6 +1,11 @@
+package League;
+
 import java.util.Scanner;
 
-public class SERIE_A extends Player implements PlayerInput {
+import Player.Player;
+import Player.PlayerInput;
+
+public class BUDESLIGA  extends Player implements PlayerInput {
 
 	public void getUserInput(Scanner input) {
 		System.out.print("Player Number:");
@@ -21,7 +26,6 @@ public class SERIE_A extends Player implements PlayerInput {
 		System.out.print("Player wage:");
 		long wage = input.nextLong();
 		this.setWage(wage);		
-		
 	}
 
 }

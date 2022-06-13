@@ -1,4 +1,9 @@
+package League;
+
 import java.util.Scanner;
+
+import Player.Player;
+import Player.PlayerInput;
 
 public class LaLiga extends Player implements PlayerInput {
 

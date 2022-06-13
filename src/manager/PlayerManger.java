@@ -1,6 +1,19 @@
+package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import League.BUDESLIGA;
+import League.EPL;
+import League.LaLiga;
+import League.SERIE_A;
+import Player.Player;
+import Player.PlayerInput;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class PlayerManger implements Serializable {
 	/**
@@ -126,6 +139,11 @@ public class PlayerManger implements Serializable {
 		}
 
 	}
+	
+	public void setScanner(Scanner input) {
+		this.input = input;
+	}
+	
 	public void setPlayerName(PlayerInput player, Scanner input) {	
 		System.out.print("Player Name:");
 		String name=input.next();
@@ -158,5 +176,9 @@ public class PlayerManger implements Serializable {
 		System.out.println("4. Edit wage");
 		System.out.println("5. Exit");
 		System.out.println("Select one number between 1 - 5");
+	}
+	
+	public int size() {
+		return players.size();
 	}
 }
