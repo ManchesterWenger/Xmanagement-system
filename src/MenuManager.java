@@ -1,7 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import log.EventLogger;
 public class MenuManager {
-
+	static EventLogger logger = new EventLogger("log.txt");
 	
 
 	public static void main(String[] args) {
@@ -21,16 +22,24 @@ public class MenuManager {
 			showMenu();
 		num = input.nextInt();
 		switch(num) {
-		case 1:playerManger.addPlayer();
+		case 1:
+			playerManger.addPlayer();
+			logger.log("add a Player");
 			break;
 			
-		case 2:playerManger.Deleteplayer();
+		case 2:
+			playerManger.Deleteplayer();
+			logger.log("delete a Player");
 			break;
 			
-		case 3:playerManger.Editplayer();
+		case 3:
+			playerManger.Editplayer();
+			logger.log("edit a Player");
 			break;
 			
-		case 4:playerManger.Viewplayers(); 
+		case 4:
+			playerManger.Viewplayers(); 
+			logger.log("view a Player");
 			break;
 			
 		case 5:System.out.print("management System over");

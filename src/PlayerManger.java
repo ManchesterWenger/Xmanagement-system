@@ -49,7 +49,7 @@ public class PlayerManger {
 				break;
 			}
 			else {
-				System.out.println("Please put an integer between 1 and 5 !");
+				System.out.println("Please put an integer between 1 and 4 !");
 			}
 		}
 	  
