@@ -1,9 +1,15 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PlayerManger {
+public class PlayerManger implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5563899708990124421L;
+	transient Scanner input;
 	ArrayList<PlayerInput> players= new ArrayList<PlayerInput>();
-	Scanner input;
+	
 	
 	PlayerManger(Scanner input){
 		this.input=input;

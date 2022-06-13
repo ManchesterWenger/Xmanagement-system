@@ -1,7 +1,13 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Player{
+public class Player implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 949368191062847874L;
+	
 	static protected String League;
 	protected String name;
 	protected int number;
