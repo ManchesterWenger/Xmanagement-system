@@ -18,7 +18,7 @@ public class MenuSelection extends JPanel {
 		
 		JButton button1 = new JButton("Add Player");
 		JButton button2 = new JButton("View Player");
-		JButton button3 = new JButton("Edit Player");
+		JButton button3 = new JButton("Edit Player" );
 		JButton button4 = new JButton("Delete Player");
 		JButton button5 = new JButton("Exit Program");
 		
